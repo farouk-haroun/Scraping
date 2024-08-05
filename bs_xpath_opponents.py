@@ -3,10 +3,10 @@ from parsel import Selector
 
 def get_opponents(html):
     selector = Selector(text = html )
-    tables = selector.xpath('table[class = "wikitable"]')
+    matches= selector.xpath('table[class = "wikitable"]')[0]
 
-    matches = tables[0]
-    trs = matches.select("tr")
+    
+    trs = matches.xpath("tr")
     opponents = []
     links = [] 
     for tr in trs:

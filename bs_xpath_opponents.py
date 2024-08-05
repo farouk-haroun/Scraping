@@ -3,7 +3,7 @@ from parsel import Selector
 
 def get_opponents(html):
     selector = Selector(text = html )
-    tables = soup.select('table[class = "wikitable"]')
+    tables = selector.xpath('table[class = "wikitable"]')
 
     matches = tables[0]
     trs = matches.select("tr")
